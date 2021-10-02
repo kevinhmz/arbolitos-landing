@@ -1,0 +1,196 @@
+<app-navbar-rest></app-navbar-rest>
+<div class="container-fluid px-0">
+  <div class="row edit mx-0" *ngIf="suc !== undefined">
+    <div class="col-lg-4 res1">
+      <img
+        class="img-main"
+        src="{{ suc[0].path }}"
+        alt=""
+        style="width: 341px; height: 511px"
+      />
+    </div>
+    <div class="col-lg-8 res">
+      <p class="p1">{{ suc[0].lugar }}</p>
+      <p class="p2">{{ suc[0].direccion }}</p>
+      <p class="p3">{{ suc[0].horario }}</p>
+      <p class="p4">Sobre el establecimiento</p>
+
+      <div style="display: flex; flex-direction: row" class="res">
+        <a class="bgsec3" href="{{suc[0].menu}}" target=”_blank”>
+          <img src="../assets/sucursalBack.png" alt="" class="img-menu-back" />
+          <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+          <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+          <div class="bgFork">
+            <img src="../assets/tenedor.png" alt="" class="img-menu-fork" />
+            <p class="p5">Menú Digital</p>
+          </div>
+        </a>
+        <a class="bgsec4" href="{{suc[0].instagram}}" target=”_blank”>
+          <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+          <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+          <div class="bgFork">
+            <i class="fab fa-instagram"></i>
+            <p class="p5">instagram</p>
+          </div>
+        </a>
+        <a class="bgsec5" href="{{suc[0].facebook}}" target=”_blank”>
+          <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+          <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+          <div class="bgFork">
+            <i class="fab fa-facebook"></i>
+            <p class="p5">facebook</p>
+          </div>
+        </a>
+      </div>
+      <button class="btn mt-5">
+        Contactar con el establecimiento &nbsp;&nbsp;<img
+          class="dis"
+          src="../assets/arrRight.png"
+          alt=""
+        />
+      </button>
+    </div>
+    <div class="row mx-0 mt-5">
+      <div class="col-lg-12">
+        <p class="p4">Requerimiento de factura</p>
+        <p class="p2">
+          Si has consumido recientemente en este establecimiento y necesitas una
+          factura, llena este formulario y se te enviará a la dirección de
+          correo electrónico que ingreses en el mismo fomulario. Gracias por su
+          visita a nuestrps establecimientos.
+        </p>
+      </div>
+    </div>
+    <div
+      class="row mx-0 mt-5 no-padding"
+      style="width: 100%; padding-right: 100px"
+    >
+      <div
+        class="col-lg-12"
+        style="
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        "
+      >
+        <button *ngIf="!factura" (click)="fac()" class="btn-factura">
+          Solicitar factura
+        </button>
+        <div class="mb-5" *ngIf="factura === true">
+          <div class="res-form" style="display: flex;column-gap: 50px">
+            <div class="form-column">
+              <label for="name">Nombre</label>
+              <input
+                class="inp1"
+                id="name"
+                type="text"
+                placeholder="Juan"
+                #user
+              />
+            </div>
+            <div class="form-column mt">
+              <label for="last">Apellidos</label>
+              <input
+                class="inp1"
+                id="last"
+                type="text"
+                placeholder="Velez"
+                #last
+              />
+            </div>
+          </div>
+          <div class="res-form" style="display: flex; column-gap: 50px; margin-top: 15px">
+            <div class="form-column">
+              <label for="email">Correo electrónico</label>
+              <input
+                class="inp1"
+                id="email"
+                type="email"
+                placeholder="ejemplo@ejemplo.com"
+                #email
+              />
+            </div>
+            <div class="form-column mt">
+              <label for="rfc">RFC</label>
+              <input
+                class="inp1"
+                id="rfc"
+                type="text"
+                placeholder="AAAA000000XX0"
+                #rfc
+              />
+            </div>
+            <div class="form-column mt">
+              <label for="razon">RAZÓN Social</label>
+              <select name="" id="razon" (change)="selectRazon($event)">
+                <option value="null">Elige una opción</option>
+                <option value="test">test</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-column" style="margin-top: 15px">
+            <label for="direccion">Dirección</label>
+            <input
+              class="inp2"
+              id="direccion"
+              type="text"
+              placeholder="Calle y número, Colonia, Municipio, Ciudad, Estado, CP"
+              #direccion
+            />
+          </div>
+          <button class="btn3 mt-4" (click)="sendFak(user.value,last.value,email.value,rfc.value,direccion.value,suc[0].correo)">RECIBIR FACTURA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12" style="margin: 0; padding: 0%">
+    <img
+      width="100%"
+      src="../assets/bottomHome2.png"
+      alt=""
+      style="height: 84%; bottom: 0; position: absolute"
+    />
+    <img width="100%" src="../assets/bottomHome.png" alt="" />
+  </div>
+  <div class="col-lg-12 bgRed px-0">
+    <p class="p6">Ubicación del establecimiento</p>
+    <div class="maps" style="position: relative">
+      <img
+        width="100%"
+        height="456px"
+        src="../assets/google-maps.png"
+        alt=""
+      />
+      <img
+        width="100%"
+        src="../assets/topred.png"
+        alt=""
+        style="position: absolute; left: 0"
+      />
+      <img
+        width="100%"
+        src="../assets/bottomRed.png"
+        alt=""
+        style="position: absolute; bottom: 0; left: 0; z-index: 5"
+      />
+    </div>
+  </div>
+  <div class="row" style="margin: 0; padding: 0;">
+    <div class="col-lg-12" style="margin: 0; padding: 0%;">
+      <img style="position: absolute;
+      height: 90%;"
+      src="../assets/section3topred.png"
+      alt="" width="100%" class="sec3-top-red"
+    />
+    <img class="sec3-top-grey"
+    src="../assets/section3greyRec.png"
+    alt="" width="100%"
+  />
+    </div>
+
+  </div>
+  <div class="row" style="margin: 0%;">
+    <app-footer style="width: 100%;"></app-footer>
+  </div>
+</div>

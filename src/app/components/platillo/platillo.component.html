@@ -1,0 +1,80 @@
+<app-navbar-rest></app-navbar-rest>
+<div class="container-fluid" *ngIf="pto===undefined"
+    style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="spinner-border" role="status" style="color: red;">
+    </div>
+</div>
+<div class="container-fluid px-0"  *ngIf="pto !== undefined">
+  <div class="row edit mx-0">
+    <div class="col-lg-4 res1">
+      <img
+        class="img-main"
+        src="{{ pto[0].Main }}"
+        alt=""
+        style="width: 341px; height: 511px"
+      />
+    </div>
+    <div class="col-lg-8">
+      <p class="p1">{{pto[0].nombre}}</p>
+      <p class="p2">{{pto[0].descripcion}}</p>
+      <p class="p3">Una deliciosa entrada disponible en todas nuestras sucursales.</p>
+      <p class="p3">{{pto[0].porcion}}</p>
+      <p class="p2 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magnis id posuere mauris,
+        tellus donec in. Ultrices libero, nunc amet nisl ipsum vestibulum nulla vitae in. Ipsum facilisis
+         morbi purus, porttitor etiam pellentesque interdum suscipit sed. Nunc, elit, vitae ut proin. Sit
+         pellentesque ipsum augue rhoncus quam sed venenatis.
+
+        Etiam tellus ut in arcu commodo enim luctus adipiscing. Accumsan proin tempus, aenean amet
+        vitae sed ut. Magna facilisis eget velit dui massa. Est magna amet amet id scelerisque egestas
+        nulla. Massa orci quisque duis risus, amet erat quis magna. Pellentesque sed ipsum, aliquet quam
+        ullamcorper urna, purus. Ultricies aliquam aliquam risus velit feugiat sagittis massa. Nibh gravida
+        nisi, sed vitae egestas pretium.</p>
+      <p class="p2-2">Recuerda que cualquier platillo en nuestro menú puede  modificarse al gusto de cada cliente.</p>
+    </div>
+    <div class="row mt-5" style="margin: 0;">
+      <div class="col-lg-12">
+        <p class="p4">Platillos que te podrían interesar</p>
+      </div>
+      <div class="col-lg-12">
+        <div class="sec2 dis" style="display: flex;">
+          <div *ngFor="let platillos of ptos | slice: 0:4" class="bgsec2" style=" background-image: url({{platillos.Main}});">
+            <img src="../assets/sucursalBack.png" alt="" class="img-menu-back" />
+            <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+            <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+            <div class="bg">
+              <p class="p5">{{platillos.nombre}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <swiper>
+    <div class="swiper-container"  [swiper]="gallery_config" >
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper ">
+        <!-- Slides -->
+
+        <div class="swiper-slide middle" *ngFor="let platillos of ptos | slice :0:4" >
+
+            <div class="bgsec2" style=" background-image: url({{platillos.Main}});">
+              <img src="../assets/sucursalBack.png" alt="" class="img-menu-back" />
+              <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+              <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+              <div class="bg">
+                <p class="p5">{{platillos.nombre}}</p>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </swiper>
+  <div class="row mt-5" style="margin: 0%;">
+    <app-footer style="width: 100%;"></app-footer>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+.p1{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 72px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 0%;
+}
+.p2{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.grid{
+  grid-gap: .4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,.5fr));
+}
+.custom-sec2{
+  display: none;
+}
+@media (max-width: 1420px) {
+  .grid{
+    grid-template-columns: repeat(auto-fit, minmax(200px,.5fr));
+  }
+}
+.bgsec1{
+  width: 200px;
+  height: 300px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+.custom-sec1> *{
+  flex-basis: calc(100% / 6 - 16px);
+   max-width: calc(100% / 6 - 16px);
+   margin: 8px;
+}
+.p3{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+  margin:0% ;
+  text-transform:uppercase;
+}
+/****section2***/
+.bg-sec2{
+  padding-left: 70px
+}
+.p4{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.img-top{
+  position: absolute;
+  left: 0%;
+}
+.p5{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+
+@media (max-width: 1080px) {
+.bg-sec2{
+  padding-left: 50px;
+}
+.sec1-first{
+  padding-left: 50px !important;
+}
+.grid{
+  padding-left: 50px !important;
+}
+}
+
+@media (max-width: 560px) {
+  .res-p{
+    position: absolute;
+    color: white;
+    left: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .custom-sec2{
+    display: block;
+  }
+  .custom-sec2> *{
+    flex-basis: calc(100% / 1 - 16px);
+     max-width: calc(100% / 1 - 16px);
+     margin: 8px;
+  }
+  .bgsec2{
+    width: 355px;
+    height: 100px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 40px;
+    margin-bottom: 15%;
+    cursor: pointer;
+  }
+  .bgsec3{
+    width: 355px;
+    height: 100px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 40px;
+    margin-bottom: 15%;
+    background-image: url(src\assets\resSucursal.png);
+  }
+  .responsive{
+    display: none;
+  }
+  .bg-sec2{
+    padding: 20px;
+  }
+  .del-px{
+    padding: 0%;
+  }
+  .p5{
+    font-size: 12px;
+  }
+  .p4{
+    font-size: 24px;
+  }
+  .bg-img > *{
+    width: 100%;
+  }
+  .img2{
+    height: 77% !important;
+  }
+  .img1{
+    height: 100%;
+  }
+  .sec1-first{
+    padding-left: 2rem !important;
+  }
+  .p1{
+    font-size: 36px;
+  }
+  .p2{
+    font-size: 20px;
+  }
+  .grid{
+    display: none;
+  }
+}

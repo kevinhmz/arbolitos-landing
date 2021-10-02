@@ -1,0 +1,127 @@
+.first-box{
+  padding: 15px;
+  display: inline-block;
+  margin: auto;
+}
+li{
+  list-style: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #000000;
+}
+ul{
+  margin: 0%;
+  padding: 0%;
+}
+i{
+  font-size: 24px;
+  color: black;
+}
+a{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+}
+.p1{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.p2{
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.5;
+}
+.custom-fix{
+  display: contents;
+}
+@media (max-width: 1000px) {
+  .px3{
+    align-items: center !important;
+  }
+}
+@media (max-width: 450px) {
+  a{
+    font-size: 14px;
+    margin-bottom: .5rem;
+  }
+  .custom-fix{
+    display: flex !important;
+    width: 100%;
+    flex-direction: row;
+  }
+  .ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .px{
+    padding: 0% !important;
+    width: 60%;
+  }
+  .px2{
+    padding: 0%;
+    margin: 0% !important;
+    display: grid !important;
+    align-items: flex-end;
+  }
+  .px3{
+    display: grid !important;
+    text-align: end;
+  }
+  .custom-row{
+    flex-wrap: wrap-reverse;
+    padding: 25px 25px !important;
+  }
+  .custom-first{
+    width: 80%;
+  }
+  .first-box{
+    margin: auto;
+  }
+  li{
+    font-size: 10px;
+  }
+  .custom-sec{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: center;
+  }
+  .custom-z{
+    padding: 0%;
+    display: flex;
+  }
+  i{
+    padding-left: 1rem;
+  }
+  .p1{
+    font-size: 12px;
+  }
+  .p2{
+    font-size: 12px;
+  }
+}
+@media (max-width: 330px) {
+  .custom-sec{
+    width: auto !important;
+  }
+}

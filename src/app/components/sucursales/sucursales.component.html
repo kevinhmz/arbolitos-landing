@@ -1,0 +1,135 @@
+<app-navbar-rest></app-navbar-rest>
+<div class="container-fluid" *ngIf="sucursales===undefined"
+    style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="spinner-border" role="status" style="color: red;">
+    </div>
+</div>
+<div id="id" class="container-fluid px-0" *ngIf="sucursales!==undefined">
+  <div class="row" style="width: 100%; margin: 0%;">
+   <div class="col-lg-12 px-0">
+    <img class="img2"
+    style="height: 56%;"
+    src="../assets/topRightHome.png"
+    alt=""
+    width="100%"
+  />
+  <img
+    style="position:absolute; left: 0%;"
+    src="../assets/topRightHome2.png"
+    alt=""
+    width="100%"
+    class=" img1"
+  />
+   </div>
+   <div class="col-lg-12 sec1-first mt-5" style="padding-left: 70px;">
+     <p class="p1">VISÍTANOS EN NUESTRA SUCURUSALES</p>
+     <p class="p2">Desde Sonora trascendiendo y llegando más cerca de tí.</p>
+   </div>
+   <div class="col-lg-12 grid " style="padding-left:70px">
+      <div *ngFor="let suc of sucursales;">
+        <div class="bgsec1" style=" background-image: url({{suc.path}});" [routerLink]="['/Sucursal',suc.id]">
+          <img style="position: absolute;
+          bottom: -.5%;
+          right: -1%;"
+          src="../assets/sec4white.png"
+          alt=""/>
+          <img style="position: absolute;
+          bottom: -.5%;
+          right: 0; width: 100%;"
+          src="../assets/sec4grey.png"
+          alt=""/>
+        </div>
+        <div>
+          <p class="p3">{{suc.lugar}}</p>
+        </div>
+      </div>
+   </div>
+   <div class="col-lg-12 custom-sec2">
+    <div class="bgsec2" *ngFor="let res of sucursales" style="background-image: url({{res.responsive}});" [routerLink]="['/Sucursal',res.id]">
+      <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+      width: 100%;
+      height: 100%;">
+      <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+      right: 0;
+      bottom: -1%;">
+      <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+      position: absolute;
+      bottom: 0;">
+      <p class="res-p">{{res.lugar}}</p>
+    </div>
+    <div class="bgsec3">
+      <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+      width: 100%;
+      height: 100%;">
+      <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+      right: 0;
+      bottom: -1%;">
+      <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+      position: absolute;
+      bottom: 0;">
+      <p class="res-p">PROXIMAMENTE,,,</p>
+    </div>
+   </div>
+
+   <div class="col-lg-12" style="margin: 0; padding: 0%;">
+    <img width="100%" src="../assets/bottomHome2.png" alt="" style="    height: 84%;
+    bottom: 0;
+    position: absolute;">
+    <img width="100%" src="../assets/bottomHome.png" alt="">
+  </div>
+  </div>
+  <div class="row bg-sec2" style="margin:0%;margin-top: -.5% !important;background: linear-gradient(180deg, #D31027 0%, #EA384F 100%);" >
+
+   <div class="col-lg-12 px-0">
+        <p class="p4">en toda la républica</p>
+    </div>
+    <!--<div class="col-lg-6 mb-5 bg-img" style="padding: 0;">
+
+        <img src="../assets/mapa.png" alt="">
+        <img class="img-top" src="../assets/mapTop.png" alt="">
+        <img style="position: absolute; left: 0; bottom: 0%;" src="../assets/mapBottom.png" alt="">
+
+    </div>
+    <div class="col-lg-6 mb-5 del-px">
+      <p class="p5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lectus imperdiet vitae eget dolor, egestas id amet ut. Duis viverra ornare arcu
+        commodo ut quisque. Pretium, sagittis in commodo aliquam eu pretium eu ac sit.
+        Sit justo malesuada id habitasse et tellus ac egestas praesent. Parturient cursus
+        amet et sed facilisi. Feugiat viverra urna orci, in. Sit orci ornare maecenas tortor
+        quis aliquet risus. Phasellus posuere at in quis rhoncus ipsum tortor, ac tincidunt. <br><br>
+
+        Viverra amet, sit eu mauris nibh aliquam tortor tempus. Est dui mi ornare sit
+        aenean gravida. Purus aliquam, tellus lacus non nulla. Et tellus nisl neque tellus.
+        Tortor, sed habitant scelerisque vulputate urna nulla nunc. Lobortis aliquam risus lacus
+        venenatis dui duis tortor id. Lobortis libero consequat tristique feugiat congue. Ut commodo
+        eu lacus, a dui. Neque ante mauris eu bibendum donec amet. Ut sed eu risus varius feugiat tempus,
+        nunc, id. Interdum viverra tellus bibendum in arcu. Non morbi magna leo platea et
+        tortor id mi tempor. Ut facilisis tellus convallis eu. Non habitant condimentum neque
+        sed. Non pellentesque enim felis nullam felis.
+      </p>
+    </div>---->
+  </div>
+
+
+</div>
+<div  id="map" style="width:100%;height:456px;"></div>
+<div class="row" style="margin: 0; padding: 0;">
+  <div class="col-lg-12" style="margin: 0; padding: 0%;">
+    <img style="position: absolute;
+    height: 90%;
+    margin-top: 0;"
+    src="../assets/section3topred.png"
+    alt="" width="100%" class="sec3-top-red"
+  />
+  <img class="sec3-top-grey"
+  src="../assets/section3greyRec.png"
+  alt="" width="100%"
+/>
+  </div>
+
+</div>
+<div class="row" style="margin: 0%;">
+  <app-footer style="width: 100%;"></app-footer>
+</div>
+

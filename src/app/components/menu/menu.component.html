@@ -1,0 +1,240 @@
+<app-navbar-rest></app-navbar-rest>
+<div class="container-fluid" *ngIf="platillo===undefined"
+    style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="spinner-border" role="status" style="color: red;">
+    </div>
+</div>
+
+<div class="container-fluid px-0" *ngIf="platillo !== undefined">
+  <div class="row" style="width: 100%; margin: 0%">
+    <div class="col-lg-12 px-0">
+      <img
+        class="img2"
+        style="height: 56%"
+        src="../assets/topRightHome.png"
+        alt=""
+        width="100%"
+      />
+      <img
+        style="position: absolute; left: 0%"
+        src="../assets/topRightHome2.png"
+        alt=""
+        width="100%"
+        class="img1"
+      />
+    </div>
+    <div class="col-lg-12 sec1 mt-5">
+        <p class="p1">Nuestro Menú</p>
+        <p class="p2">Los mariscos más frescos, los mejores cortes y el ambiente ideal</p>
+        <div class="gd">
+          <button [class.act]="todo===true" class="btn1" (click)="todos()">todo</button>
+          <button [class.act]="entradas===true" class="btn1" (click)="entrada()">entradas</button>
+          <button [class.act]="sopas===true" class="btn1" (click)="sopa()">sopas</button>
+          <button [class.act]="mariscos===true" class="btn1" (click)="marisco()">mariscos</button>
+          <button [class.act]="pescado===true" class="btn1" (click)="pescados()">pescados</button>
+          <button [class.act]="carnes===true" class="btn1" (click)="carne()">carnes</button>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="todo===true">
+          <div class="dis" *ngFor="let pllo of platillo;">
+            <div class="bgsec1"  style=" background-image: url({{pllo.Main}});" [routerLink]="['/Platillo',pllo.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div>
+              <p class="p3">{{pllo.nombre}}</p>
+              <p class="p4">{{pllo.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2" *ngFor="let pllo of platillo;" style="background-image: url({{pllo.res}});" [routerLink]="['/Platillo',pllo.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{pllo.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="entradas===true">
+          <div class="dis" *ngFor="let entrada of Ent;">
+            <div class="bgsec1" style=" background-image: url({{entrada.Main}});" [routerLink]="['/Platillo',entrada.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{entrada.nombre}}</p>
+              <p class="p4">{{entrada.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2" *ngFor="let entrada of Ent;" style="background-image: url({{entrada.res}});" [routerLink]="['/Platillo',entrada.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{entrada.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="mariscos===true">
+          <div class="dis" *ngFor="let mariscos of Mar;">
+            <div class="bgsec1" style=" background-image: url({{mariscos.Main}});" [routerLink]="['/Platillo',mariscos.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div>
+              <p class="p3">{{mariscos.nombre}}</p>
+              <p class="p4">{{mariscos.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2" *ngFor="let mariscos of Mar;" style="background-image: url({{mariscos.res}});" [routerLink]="['/Platillo',mariscos.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{mariscos.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="sopas===true">
+          <div class="dis" *ngFor="let sopa of Soup;">
+            <div class="bgsec1"  style=" background-image: url({{sopa.Main}});" [routerLink]="['/Platillo',sopa.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div>
+              <p class="p3">{{sopa.nombre}}</p>
+              <p class="p4">{{sopa.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"  *ngFor="let sopa of Soup;" style="background-image: url({{sopa.res}});" [routerLink]="['/Platillo',sopa.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{sopa.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="pescado===true">
+          <div class="dis" *ngFor="let fish of pez;">
+            <div class="bgsec1" style=" background-image: url({{fish.Main}});" [routerLink]="['/Platillo',fish.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{fish.nombre}}</p>
+              <p class="p4">{{fish.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let fish of pez;" style="background-image: url({{fish.res}});" [routerLink]="['/Platillo',fish.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{fish.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="carnes===true">
+          <div class="dis" *ngFor="let carne of meat;">
+            <div class="bgsec1" style=" background-image: url({{carne.Main}});" [routerLink]="['/Platillo',carne.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{carne.nombre}}</p>
+              <p class="p4">{{carne.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let carne of meat;"style="background-image: url({{carne.res}});" [routerLink]="['/Platillo',carne.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{carne.nombre}}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row mt-5" style="margin: 0%;">
+    <app-footer style="width: 100%;"></app-footer>
+  </div>
+</div>

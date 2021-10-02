@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <img src="../assets/logoArb.png" alt="">
+  <button class="navbar-toggler custom-toggler" type="button" data-toggle="modal" data-target="#exampleModal" aria-controls="#exampleModal" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" style="justify-content: center;" id="navbarNavAltMarkupp">
+    <div class="navbar-nav" style="flex: auto; justify-content: center;">
+      <a class="nav-link" [routerLink]="'/inicio'" routerLinkActive="active" >INICIO</a>
+      <a class="nav-link" [routerLink]="'/sucursales'"  routerLinkActive="active">Sucursales</a>
+      <a class="nav-link" [routerLink]="'/menu'"  routerLinkActive="active">Menú</a>
+      <a class="nav-link" [routerLink]="'/contacto'" routerLinkActive="active">Contacto</a>
+    </div>
+    <button class="btn" [routerLink]="'/unete'">ÚNETE A NOSOTROS</button>
+  </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center;">
+          <img src="../assets/logoArb.png" alt="">
+        <div class="first-box">
+          <ul>
+            <li>MARISCOS</li>
+            <li>LOS ARBOLITOS</li>
+            <li>DÉ CAJEME</li>
+          </ul>
+      </div>
+        </div>
+        <i style="color: white;" class="fas fa-times close" data-dismiss="modal" aria-label="Close"></i>
+
+      </div>
+      <div class="modal-body">
+        <div class="navbar-nav" style="flex: auto; justify-content: center;">
+          <a class="nav-link" [routerLink]="'/inicio'" routerLinkActive="active" >INICIO</a>
+          <a class="nav-link" [routerLink]="'/sucursales'"  routerLinkActive="active">Sucursales</a>
+          <a class="nav-link" [routerLink]="'/menu'"  routerLinkActive="active">Menú</a>
+          <a class="nav-link" [routerLink]="'/contacto'" routerLinkActive="active">Contacto</a>
+          <a class="nav-link" [routerLink]="'/unete'" routerLinkActive="active">Únete a nosotros</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

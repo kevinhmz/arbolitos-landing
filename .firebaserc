@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "arbolitos-82561": {
+      "hosting": {
+        "arbolitos": [
+          "arbolitos-82561"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "arbolitos-82561"
+  }
+}

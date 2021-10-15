@@ -1,4 +1,5 @@
-<app-navbar-rest></app-navbar-rest>
+<app-navbar-rest>
+</app-navbar-rest>
 <div class="container-fluid px-0">
   <div class="row" style="width: 100%; margin: 0%">
     <div class="col-lg-12 px-0">
@@ -27,13 +28,13 @@
         <div class="col-lg-6">
           <div style="display: flex; flex-direction: column;">
               <label for="nombre">NOMBRES</label>
-              <input class="inp1" id="nombre" type="text" placeholder="Juan">
+              <input class="inp1" id="nombre" type="text" placeholder="Juan" #user>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="mt" style="display: flex; flex-direction: column;">
               <label for="apellido">APELLIDOS</label>
-              <input class="inp1" id="apellido" type="text" placeholder="Vélez">
+              <input class="inp1" id="apellido" type="text" placeholder="Vélez" #last>
           </div>
         </div>
       </div>
@@ -41,32 +42,33 @@
         <div class="col-lg-6">
           <div  style="display: flex; flex-direction: column;">
               <label for="correo">Correo electrónico</label>
-              <input class="inp1" id="correo" type="email" placeholder="ejemplo@ejemplo.com">
+              <input class="inp1" id="correo" type="email" placeholder="ejemplo@ejemplo.com" #email>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="mt" style="display: flex; flex-direction: column;">
               <label for="apellido">Sucursal</label>
-              <select name="" id="apellido">
+              <select name="" id="apellido" (change)="selectEmpresa($event)">
                 <option value="">Elige una sucursal</option>
-                <option value="{{suc.lugar}}"  *ngFor="let suc of sucursales;">{{suc.lugar}}</option>
+                <option value="{{suc.correo}}"  *ngFor="let suc of sucursales;">{{suc.lugar}}</option>
               </select>
           </div>
         </div>
         <div class="col-lg-12 mt-3">
           <div  style="display: flex; flex-direction: column;">
               <label for="asunto">asunto</label>
-              <input class="inp1" type="text" id="asunto" placeholder="Asunto del mensaje">
+              <input class="inp1" type="text" id="asunto" placeholder="Asunto del mensaje" #asunto>
           </div>
         </div>
         <div class="col-lg-12 mt-3">
           <div  style="display: flex; flex-direction: column;">
               <label for="asunto">mensaje</label>
-              <textarea name="" id="asunto" cols="30" rows="4" placeholder="Mensaje detallado del contacto"></textarea>
+              <textarea name="" id="asunto" cols="30" rows="4" placeholder="Mensaje detallado del contacto" #comentario></textarea>
           </div>
         </div>
         <div class="col-lg-12 mt-5">
-          <button class="btn1">Enviar mensaje</button>
+          <button class="btn1" (click)="sendContacto(user.value,last.value,email.value,asunto.value,comentario.value)">Enviar mensaje</button>
+          <button id="openModal" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#contacto"></button>
         </div>
       </div>
     </div>
@@ -79,5 +81,20 @@
   </div>
   <div class="row mt-5" style="margin: 0%;">
     <app-footer style="width: 100%;"></app-footer>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <p class="pm-1">Agradecemos tu opinión</p>
+        <p class="pm-2">Siempre estamos atentos a los mensajes y sugerencias
+          de todos nuestros clientes y no dudes que tomaremos en cuenta tu opinión. ¡Muchas gracias!</p>
+          <button class="btnm" data-dismiss="modal">ACEPTAR</button>
+      </div>
+    </div>
   </div>
 </div>

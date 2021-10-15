@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SucursalesService } from '../../services/sucursales.service';
 import { Loader } from '@googlemaps/js-api-loader';
 import * as $ from 'jquery';
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-sucursales',
   templateUrl: './sucursales.component.html',
@@ -11,12 +12,20 @@ export class SucursalesComponent implements OnInit {
 sucursales:any;
 coor:any;
 lng:any;
-  constructor(private sucursal: SucursalesService) {
+  constructor(private sucursal: SucursalesService, private router: Router) {
 
    }
 
   ngOnInit(): void {
-
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
 this.getSucursal()
 
   }
@@ -33,7 +42,6 @@ this.getSucursal()
           })
         });
 
-        console.log(this.sucursales)
         if(this.sucursales.length === 1){
           window.location.reload();
 
@@ -41,15 +49,14 @@ this.getSucursal()
         for(let i=0;i<=this.sucursales.length;i++){
          this.coor =[]
           this.coor= this.sucursales[i].lat
-          console.log(this.coor)
-
+          this.mapa()
         }
       });
 
   }
 
 
-/*
+
   mapa(){
 console.log(this.sucursales)
 
@@ -90,5 +97,5 @@ console.log(this.sucursales)
                  });
                }
 
-  }*/
+  }
 }

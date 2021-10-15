@@ -1,12 +1,35 @@
 <app-navbar-rest></app-navbar-rest>
 <div class="container-fluid px-0">
   <div class="row edit mx-0" *ngIf="suc !== undefined">
+
+<!-- Modal -->
+<div class="modal fade" id="factura" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <p class="pm-1">Datos recibidos</p>
+        <p class="pm-2">Se han recibido tus datos, en cuanto este  lista tu factura será
+          enviada al correo electrónico que nos proporcionaste en el formulario.</p>
+          <button class="btnm" data-dismiss="modal">ACEPTAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="col-lg-4 res1">
       <img
         class="img-main"
         src="{{ suc[0].path }}"
         alt=""
-        style="width: 341px; height: 511px"
+        style="width: 341px; height: 511px;"
+      />
+      <img
+        class="img-main2"
+        src="{{ suc[0].responsive }}"
+        alt=""
+        style="width: 341px; height: 511px; border-radius: 40px;"
       />
     </div>
     <div class="col-lg-8 res">
@@ -140,6 +163,7 @@
             />
           </div>
           <button class="btn3 mt-4" (click)="sendFak(user.value,last.value,email.value,rfc.value,direccion.value,suc[0].correo)">RECIBIR FACTURA</button>
+          <button id="openModal" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#factura"></button>
         </div>
       </div>
     </div>
@@ -154,8 +178,8 @@
     <img width="100%" src="../assets/bottomHome.png" alt="" />
   </div>
   <div class="col-lg-12 bgRed px-0">
-    <p class="p6">Ubicación del establecimiento</p>
-    <div class="maps" style="position: relative">
+    <p class="p6" style="margin: 0%;">Ubicación del establecimiento</p>
+    <!---<div class="maps" style="position: relative">
       <img
         width="100%"
         height="456px"
@@ -174,23 +198,11 @@
         alt=""
         style="position: absolute; bottom: 0; left: 0; z-index: 5"
       />
-    </div>
+    </div>-->
   </div>
-  <div class="row" style="margin: 0; padding: 0;">
-    <div class="col-lg-12" style="margin: 0; padding: 0%;">
-      <img style="position: absolute;
-      height: 90%;"
-      src="../assets/section3topred.png"
-      alt="" width="100%" class="sec3-top-red"
-    />
-    <img class="sec3-top-grey"
-    src="../assets/section3greyRec.png"
-    alt="" width="100%"
-  />
-    </div>
+</div>
+<div  id="map" style="width:100%;height:456px;"></div>
 
-  </div>
-  <div class="row" style="margin: 0%;">
-    <app-footer style="width: 100%;"></app-footer>
-  </div>
+<div class="row" style="margin: 0%;">
+  <app-footer style="width: 100%;"></app-footer>
 </div>

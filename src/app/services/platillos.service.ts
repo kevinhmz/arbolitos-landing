@@ -31,4 +31,25 @@ export class PlatillosService {
   getCarnes(): Observable<any>{
     return this.firestore.collection('platillos',ref=>ref.where('categoria','==','carnes')).snapshotChanges();
   }
+  getTostadas(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','tostada')).snapshotChanges();
+  }
+  getTacos(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','taco')).snapshotChanges();
+  }
+  getMolca(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','molcajete')).snapshotChanges();
+  }
+  getEnsalada(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','ensalada')).snapshotChanges();
+  }
+  getOctopus(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','pulpo')).snapshotChanges();
+  }
+  getFiletes(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','filete')).snapshotChanges();
+  }
+  getShrimp(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','camaron')).snapshotChanges();
+  }
 }

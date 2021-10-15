@@ -18,11 +18,15 @@ let transporter = nodemailer.createTransport({
 exports.factura = functions.https.onCall(async (data: any) => {
   console.log(data)
   try {
-    let body= `<p>Nombre: ${data.user} Apellidos: ${data.last}</p><br><br>
-               <p>Correo: ${data.email}</p><br><br>
-               <p>RFC: ${data.rfc}</p><br><br>
-               <p>Razón Social: ${data.razon}</p><br><br>
-               <p>Dirección: ${data.direccion}</p><br><br>
+    let body= `
+
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+               <p style="font-weight:bold;">Nombre: <span style="font-weight: normal;">${data.user} ${data.last}</span></p>
+               <p style="font-weight: bold;">Correo: <span style="font-weight:normal">${data.email}</span></p>
+               <p style="font-weight: bold;">RFC: <span style="font-weight:normal">${data.rfc}</span></p>
+               <p style="font-weight: bold;">Razón Social: <span style="font-weight:normal">${data.razon}</span></p>
+               <p style="font-weight: bold;">Dirección: <span style="font-weight:normal">${data.direccion}</span></p>
                `
 
     var mailOptions = {
@@ -31,7 +35,97 @@ exports.factura = functions.https.onCall(async (data: any) => {
               address: `<${data.email}>`
           }, // Something like: Jane Doe <janedoe@gmail.com>
             to: `${data.empresa}`,
-            subject: 'Solicito borrar mi información', // email subject
+            subject: 'Solicitud de Factura Arbolitos', // email subject
+            html: body, // email content in HTML
+    }
+
+          // returning result
+          transporter.sendMail(mailOptions, function(error:any, response:any){
+            if(error){
+                console.log(error);
+            }else{
+                console.log("Message sent: " + response.message);
+            }
+
+            // if you don't want to use this transport object anymore, uncomment following line
+            //smtpTransport.close(); // shut down the connection pool, no more messages
+        });
+
+  } catch (error) {
+    console.log(error);
+    return { error: true, ...error };
+  }
+});
+
+
+exports.contacto = functions.https.onCall(async (data: any) => {
+  console.log(data)
+  try {
+    let body= `
+
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+               <p style="font-weight:bold;">Nombre: <span style="font-weight: normal;">${data.user} ${data.last}</span></p>
+               <p style="font-weight: bold;">Correo: <span style="font-weight:normal">${data.email}</span></p><br><br>
+               <p style="font-weight: bold;">Comentario: <span style="font-weight:normal">${data.comentario}</span></p>
+               `
+
+    var mailOptions = {
+            from: {
+              name: `${data.user}`,
+              address: `<${data.email}>`
+          }, // Something like: Jane Doe <janedoe@gmail.com>
+            to: `${data.empresa}`,
+            subject: `${data.asunto}`, // email subject
+            html: body, // email content in HTML
+    }
+
+          // returning result
+          transporter.sendMail(mailOptions, function(error:any, response:any){
+            if(error){
+                console.log(error);
+            }else{
+                console.log("Message sent: " + response.message);
+            }
+
+            // if you don't want to use this transport object anymore, uncomment following line
+            //smtpTransport.close(); // shut down the connection pool, no more messages
+        });
+
+  } catch (error) {
+    console.log(error);
+    return { error: true, ...error };
+  }
+});
+
+
+exports.hire = functions.https.onCall(async (data: any) => {
+  console.log(data)
+  try {
+    let body= `
+
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+               <p style="font-weight:bold;">Nombre: <span style="font-weight: normal;">${data.user} ${data.last}</span></p>
+               <p style="font-weight: bold;">Correo: <span style="font-weight:normal">${data.email}</span></p>
+               <p style="font-weight: bold;">Teléfono: <span style="font-weight:normal">${data.tel}</span></p>
+               <p style="font-weight: bold;">C.P: <span style="font-weight:normal">${data.cp}</span></p>
+               <p style="font-weight: bold;">Edad: <span style="font-weight:normal">${data.years}</span></p>
+               <p style="font-weight: bold;">Nivel de Escolaridad: <span style="font-weight:normal">${data.school}</span></p>
+               <p style="font-weight: bold;">Área de interes: <span style="font-weight:normal">${data.interest}</span></p><br>
+               <p style="font-weight: bold;">Perfil: <span style="font-weight:normal">${data.perfil}</span></p>
+
+
+
+               `
+
+    var mailOptions = {
+            from: {
+              name: `${data.user}`,
+              address: `<${data.email}>`
+          }, // Something like: Jane Doe <janedoe@gmail.com>
+            to: `${data.empresa}`,
+            subject: 'Solicitud de Contratacíon', // email subject
             html: body, // email content in HTML
     }
 

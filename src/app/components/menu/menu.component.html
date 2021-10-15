@@ -33,6 +33,13 @@
           <button [class.act]="mariscos===true" class="btn1" (click)="marisco()">mariscos</button>
           <button [class.act]="pescado===true" class="btn1" (click)="pescados()">pescados</button>
           <button [class.act]="carnes===true" class="btn1" (click)="carne()">carnes</button>
+          <button [class.act]="tostada===true" class="btn1" (click)="tostadas()">Tostadas</button>
+          <button [class.act]="taco===true" class="btn1" (click)="Tacos()">Tacos</button>
+          <button [class.act]="molcajete===true" class="btn1" (click)="Molca()">Molcajetes</button>
+          <button [class.act]="ensalada===true" class="btn1" (click)="Ensalada()">Ensaladas</button>
+          <button [class.act]="pulpo===true" class="btn1" (click)="Pulpo()">Pulpos</button>
+          <button [class.act]="filete===true" class="btn1" (click)="Filetes()">Filetes</button>
+          <button [class.act]="camaron===true" class="btn1" (click)="Shrimp()">Camarón</button>
         </div>
         <div class="gdPlatillos mt-5" *ngIf="todo===true">
           <div class="dis" *ngFor="let pllo of platillo;">
@@ -230,6 +237,237 @@
             position: absolute;
             bottom: 0;">
             <p class="res-p">{{carne.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="tostada===true">
+          <div class="dis" *ngFor="let tostada of tost;">
+            <div class="bgsec1" style=" background-image: url({{tostada.Main}});" [routerLink]="['/Platillo',tostada.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{tostada.nombre}}</p>
+              <p class="p4">{{tostada.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let tostada of tost;"style="background-image: url({{tostada.res}});" [routerLink]="['/Platillo',tostada.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{tostada.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="taco===true">
+          <div class="dis" *ngFor="let taco of tacos;">
+            <div class="bgsec1" style=" background-image: url({{taco.Main}});" [routerLink]="['/Platillo',taco.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{taco.nombre}}</p>
+              <p class="p4">{{taco.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let taco of tacos;"style="background-image: url({{taco.res}});" [routerLink]="['/Platillo',taco.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{taco.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="molcajete===true">
+          <div class="dis" *ngFor="let molcajete of molca;">
+            <div class="bgsec1" style=" background-image: url({{molcajete.Main}});" [routerLink]="['/Platillo',molcajete.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{molcajete.nombre}}</p>
+              <p class="p4">{{molcajete.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let molcajete of molca;"style="background-image: url({{molcajete.res}});" [routerLink]="['/Platillo',molcajete.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{molcajete.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="ensalada===true">
+          <div class="dis" *ngFor="let ensalada of salat;">
+            <div class="bgsec1" style=" background-image: url({{ensalada.Main}});" [routerLink]="['/Platillo',ensalada.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{ensalada.nombre}}</p>
+              <p class="p4">{{ensalada.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let ensalada of salat;"style="background-image: url({{ensalada.res}});" [routerLink]="['/Platillo',ensalada.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{ensalada.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="pulpo===true">
+          <div class="dis" *ngFor="let pulpo of oct;">
+            <div class="bgsec1" style=" background-image: url({{pulpo.Main}});" [routerLink]="['/Platillo',pulpo.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{pulpo.nombre}}</p>
+              <p class="p4">{{pulpo.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let pulpo of oct;"style="background-image: url({{pulpo.res}});" [routerLink]="['/Platillo',pulpo.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{pulpo.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="filete===true">
+          <div class="dis" *ngFor="let filete of Filete;">
+            <div class="bgsec1" style=" background-image: url({{filete.Main}});" [routerLink]="['/Platillo',filete.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{filete.nombre}}</p>
+              <p class="p4">{{filete.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let filete of Filete;"style="background-image: url({{filete.res}});" [routerLink]="['/Platillo',filete.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{filete.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="camaron===true">
+          <div class="dis" *ngFor="let camaron of shrimp;">
+            <div class="bgsec1" style=" background-image: url({{camaron.Main}});" [routerLink]="['/Platillo',camaron.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{camaron.nombre}}</p>
+              <p class="p4">{{camaron.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let camaron of shrimp;"style="background-image: url({{camaron.res}});" [routerLink]="['/Platillo',camaron.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{camaron.nombre}}</p>
           </div>
         </div>
     </div>

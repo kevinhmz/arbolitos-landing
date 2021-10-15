@@ -35,13 +35,13 @@
         <div class="col-lg-6">
           <div style="display: flex; flex-direction: column">
             <label for="nombre">NOMBRES</label>
-            <input class="inp1" id="nombre" type="text" placeholder="Juan" />
+            <input class="inp1" id="nombre" type="text" placeholder="Juan" #user/>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="mt" style="display: flex; flex-direction: column">
             <label for="apellido">APELLIDOS</label>
-            <input class="inp1" id="apellido" type="text" placeholder="Vélez" />
+            <input class="inp1" id="apellido" type="text" placeholder="Vélez" #last/>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
               id="correo"
               type="email"
               placeholder="ejemplo@ejemplo.com"
-            />
+            #email/>
           </div>
         </div>
         <div class="col-lg-6">
@@ -65,41 +65,52 @@
               id="telefono"
               type="text"
               placeholder="(+52) 5512345678"
-            />
+            #tel/>
           </div>
         </div>
         <div class="col-lg-6 mt-4">
           <div style="display: flex; flex-direction: column">
             <label for="postal">Código Postal</label>
-            <input class="inp1" id="postal" type="text" placeholder="12345" />
+            <input class="inp1" id="postal" type="text" placeholder="12345" #cp/>
           </div>
         </div>
         <div class="col-lg-6 mt-4">
           <div style="display: flex; flex-direction: column">
             <label for="Edad">Edad</label>
-            <input class="inp1" id="Edad" type="text" placeholder="18" />
+            <input class="inp1" id="Edad" type="text" placeholder="18" #years/>
+          </div>
+        </div>
+        <div class="col-lg-12 mt-4">
+          <div style="display: flex; flex-direction: column">
+            <label for="escolaridad">Sucursal</label>
+            <select name="" id="escolaridad" (change)="selectEmpresa($event)">
+              <option value="">Elige una opción</option>
+              <option value="{{suc.correo}}"  *ngFor="let suc of sucursales;">{{suc.lugar}}</option>
+            </select>
           </div>
         </div>
         <div class="col-lg-12 mt-4">
           <div style="display: flex; flex-direction: column">
             <label for="escolaridad">Nivel de escolaridad</label>
-            <select name="" id="escolaridad">
+            <select name="" id="escolaridad" (change)="selectSchool($event)">
               <option value="">Elige una opción</option>
+              <option value="secundaria">Secundaria</option>
             </select>
           </div>
         </div>
         <div class="col-lg-12 mt-4">
           <div style="display: flex; flex-direction: column">
             <label for="area">Área de Interes</label>
-            <select name="" id="area">
+            <select name="" id="area" (change)="selectInt($event)">
               <option value="">Elige un área</option>
+              <option value="plancha">Plancha</option>
             </select>
           </div>
         </div>
         <div class="col-lg-12 mt-4">
           <div style="display: flex; flex-direction: column">
             <label for="Perfil">Perfil</label>
-            <textarea
+            <textarea #perfil
               name=""
               id="Perfil"
               cols="30"
@@ -109,12 +120,30 @@
           </div>
         </div>
         <div class="col-lg-12 mt-4">
-          <button class="btn1">Enviar solicitud</button>
+          <button class="btn1" (click)="sendHire(user.value,last.value,email.value,tel.value,cp.value,years.value,perfil.value)">Enviar solicitud</button>
+          <button id="openModal" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#hire"></button>
         </div>
       </div>
     </div>
   </div>
   <div class="row mt-5" style="margin: 0%;">
     <app-footer style="width: 100%;"></app-footer>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="hire" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <p class="pm-1">Esperamos hablar contigo</p>
+        <p class="pm-2">Nuestro equipo se encargara de revisar tu solicitud y
+          si coincide con alguna oportunidad en nuestras vacantes alguien de nosotros
+          se contactara contigo. Muchas gracias por decidir aplicar y esperamos pronto
+          verte siendo parte de la familia.</p>
+          <button class="btnm" data-dismiss="modal">ACEPTAR</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -243,7 +243,7 @@
 color: #FFFFFF;
 }
 .bgsec4{
-  background-image: url(src\assets\logoArb.png);
+  background-image: url(src\assets\Logotipo.PNG);
   width: 230px;
   height: 452.31px;
   position: relative;
@@ -275,7 +275,7 @@ color: #FFFFFF;
   background-image: none;
 }
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-bottom: 55px;
+bottom: 190px;
 left: 0;
 width: 100%;
 }

@@ -76,19 +76,19 @@ sendFak(user:any,last:any,email:any,rfc:any,direccion:any,empresa:any){
 }
 
 mapa(){
-
-    const loc = { lat: 23.634501, lng: -102.55278399999997}
+  this.coor =[]
+  this.coor= this.suc[0].lat
+  this.lng =[]
+  this.lng=this.suc[0].lng
+    const loc = { lat: this.coor, lng: this.lng}
 
              let   map = new google.maps.Map(document.getElementById("map")!, {
                   center: loc,
-                  zoom: 4,
+                  zoom: 14,
                   gestureHandling: "cooperative",
                 })
                 var a= [-102.52,-108]
-                  this.coor =[]
-                   this.coor= this.suc[0].lat
-                   this.lng =[]
-                   this.lng=this.suc[0].lng
+
                    const location ={lat: this.coor, lng: this.lng}
                    const iconBase =
                    "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
@@ -105,7 +105,7 @@ mapa(){
 
                    });
                    marker.addListener("click", () => {
-                     map.setZoom(14);
+                     map.setZoom(16);
                      map.setCenter(marker.getPosition() as google.maps.LatLng);
                    });
 

@@ -30,7 +30,7 @@
           <button [class.act]="todo===true" class="btn1" (click)="todos()">todo</button>
           <button [class.act]="entradas===true" class="btn1" (click)="entrada()">entradas</button>
           <button [class.act]="sopas===true" class="btn1" (click)="sopa()">sopas</button>
-          <button [class.act]="mariscos===true" class="btn1" (click)="marisco()">mariscos</button>
+          <button [class.act]="mariscos===true" class="btn1" (click)="marisco()">Fresco</button>
           <button [class.act]="pescado===true" class="btn1" (click)="pescados()">pescados</button>
           <button [class.act]="carnes===true" class="btn1" (click)="carne()">carnes</button>
           <button [class.act]="tostada===true" class="btn1" (click)="tostadas()">Tostadas</button>
@@ -40,6 +40,8 @@
           <button [class.act]="pulpo===true" class="btn1" (click)="Pulpo()">Pulpos</button>
           <button [class.act]="filete===true" class="btn1" (click)="Filetes()">Filetes</button>
           <button [class.act]="camaron===true" class="btn1" (click)="Shrimp()">Camarón</button>
+          <button [class.act]="langosta===true" class="btn1" (click)="Langosta()">Langosta</button>
+          <button [class.act]="especialidad==true" class="btn1" (click)="Especial()">Especialidades</button>
         </div>
         <div class="gdPlatillos mt-5" *ngIf="todo===true">
           <div class="dis" *ngFor="let pllo of platillo;">
@@ -468,6 +470,72 @@
             position: absolute;
             bottom: 0;">
             <p class="res-p">{{camaron.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="langosta===true">
+          <div class="dis" *ngFor="let langosta of lango;">
+            <div class="bgsec1" style=" background-image: url({{langosta.Main}});" [routerLink]="['/Platillo',langosta.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{langosta.nombre}}</p>
+              <p class="p4">{{langosta.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let langosta of shrimp;"style="background-image: url({{langosta.res}});" [routerLink]="['/Platillo',langosta.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{langosta.nombre}}</p>
+          </div>
+        </div>
+        <div class="gdPlatillos mt-5" *ngIf="especialidad===true">
+          <div class="dis" *ngFor="let especialidad of especial;">
+            <div class="bgsec1" style=" background-image: url({{especialidad.Main}});" [routerLink]="['/Platillo',especialidad.id]">
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0;"
+              src="../assets/sec4white.png"
+              alt=""/>
+              <img style="position: absolute;
+              bottom: -.5%;
+              right: 0; width: 100%;"
+              src="../assets/sec4grey.png"
+              alt=""/>
+
+            </div>
+            <div >
+              <p class="p3">{{especialidad.nombre}}</p>
+              <p class="p4">{{especialidad.descripcion}}</p>
+            </div>
+          </div>
+          <div class="bgsec2"   *ngFor="let especialidad of shrimp;"style="background-image: url({{especialidad.res}});" [routerLink]="['/Platillo',especialidad.id]">
+            <img src="../assets/resSucBack.png" alt="" style="position: absolute;
+            width: 100%;
+            height: 100%;">
+            <img src="../assets/resSucWhite.png" alt="" style="    position: absolute;
+            right: 0;
+            bottom: -1%;">
+            <img src="../assets/resSucGrey.png" alt="" style="    width: 100%;
+            position: absolute;
+            bottom: 0;">
+            <p class="res-p">{{especialidad.nombre}}</p>
           </div>
         </div>
     </div>

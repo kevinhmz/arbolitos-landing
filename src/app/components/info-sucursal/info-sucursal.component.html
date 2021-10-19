@@ -23,7 +23,7 @@
         class="img-main"
         src="{{ suc[0].path }}"
         alt=""
-        style="width: 341px; height: 511px;"
+        style="width: 100%; height: 511px;"
       />
       <img
         class="img-main2"
@@ -64,8 +64,16 @@
             <p class="p5">facebook</p>
           </div>
         </a>
+        <a class="bgsec6" href="{{suc[0].domicilio}}" target=”_blank”>
+          <img src="../assets/sucWhite.png" alt="" class="img-menu-white" />
+          <img src="../assets/sucGrey.png" alt="" class="img-menu-grey" />
+          <div class="bgFork">
+            <i class="fas fa-shipping-fast"></i>
+            <p class="p5">Servicio domicilio</p>
+          </div>
+        </a>
       </div>
-      <button class="btn mt-5">
+      <button class="btn mt-5" routerLink="/contacto">
         Contactar con el establecimiento &nbsp;&nbsp;<img
           class="dis"
           src="../assets/arrRight.png"
@@ -73,7 +81,7 @@
         />
       </button>
     </div>
-    <div class="row mx-0 mt-5">
+    <!--<div class="row mx-0 mt-5">
       <div class="col-lg-12">
         <p class="p4">Requerimiento de factura</p>
         <p class="p2">
@@ -166,7 +174,7 @@
           <button id="openModal" [hidden]="true" class="btn btn-primary" data-toggle="modal" data-target="#factura"></button>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
   <div class="col-lg-12" style="margin: 0; padding: 0%">
     <img

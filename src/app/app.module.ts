@@ -7,7 +7,6 @@ import { AngularFireModule} from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import firebase from 'firebase/app';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarInicioComponent } from './share/navbar-inicio/navbar-inicio.component';
 import { NavbarRestComponent } from './share/navbar-rest/navbar-rest.component';

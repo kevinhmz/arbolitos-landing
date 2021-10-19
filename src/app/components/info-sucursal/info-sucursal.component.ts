@@ -19,7 +19,6 @@ export class InfoSucursalComponent implements OnInit {
   constructor(private firestore: AngularFirestore,
     private aRoute: ActivatedRoute, private sucursal: SucursalesService,private router: Router) {
     this.uid = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.uid)
    }
 
   ngOnInit(): void {
@@ -63,7 +62,7 @@ sendFak(user:any,last:any,email:any,rfc:any,direccion:any,empresa:any){
       empresa:empresa
     }
 
-    let prueba =firebase.default.functions().httpsCallable("factura");
+    let prueba =firebase.functions().httpsCallable("factura");
       prueba({...data}).then(
   (res) => {
     console.log(res);
@@ -77,11 +76,8 @@ sendFak(user:any,last:any,email:any,rfc:any,direccion:any,empresa:any){
 }
 
 mapa(){
-console.log(this.suc[0].lat)
-
 
     const loc = { lat: 23.634501, lng: -102.55278399999997}
-              console.log(loc)
 
              let   map = new google.maps.Map(document.getElementById("map")!, {
                   center: loc,
@@ -93,7 +89,6 @@ console.log(this.suc[0].lat)
                    this.coor= this.suc[0].lat
                    this.lng =[]
                    this.lng=this.suc[0].lng
-                   console.log(this.coor)
                    const location ={lat: this.coor, lng: this.lng}
                    const iconBase =
                    "https://developers.google.com/maps/documentation/javascript/examples/full/images/";

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SucursalesService } from '../../services/sucursales.service';
-import { Loader } from '@googlemaps/js-api-loader';
-import * as $ from 'jquery';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-sucursales',
   templateUrl: './sucursales.component.html',
@@ -17,17 +15,7 @@ lng:any;
    }
 
   ngOnInit(): void {
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    }
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-          return;
-      }
-      window.scrollTo(0, 0)
-  });
-this.getSucursal()
-
+    this.getSucursal()
   }
 
   getSucursal(){
@@ -58,11 +46,9 @@ this.getSucursal()
 
 
   mapa(){
-console.log(this.sucursales)
 
 
   const loc = { lat: 23.634501, lng: -102.55278399999997}
-            console.log(loc)
 
            let   map = new google.maps.Map(document.getElementById("map")!, {
                 center: loc,
@@ -75,7 +61,6 @@ console.log(this.sucursales)
                  this.coor= this.sucursales[i].lat
                  this.lng =[]
                  this.lng=this.sucursales[i].lng
-                 console.log(this.coor)
                  const location ={lat: this.coor, lng: this.lng}
                  const iconBase =
                  "https://developers.google.com/maps/documentation/javascript/examples/full/images/";

@@ -52,4 +52,11 @@ export class PlatillosService {
   getShrimp(): Observable<any>{
     return this.firestore.collection('platillos',ref=>ref.where('categoria','==','camaron')).snapshotChanges();
   }
+  getLangosta(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','langosta')).snapshotChanges();
+  }
+  getEspecial(): Observable<any>{
+    return this.firestore.collection('platillos',ref=>ref.where('categoria','==','especialidad')).snapshotChanges();
+  }
+
 }

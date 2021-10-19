@@ -27,6 +27,8 @@ export class MenuComponent implements OnInit {
   pulpo:boolean=false
   filete:boolean=false
   camaron:boolean=false
+  langosta:boolean=false
+  especialidad:boolean=false
 
   tost:any
   tacos:any
@@ -35,6 +37,8 @@ export class MenuComponent implements OnInit {
   oct:any
   Filete:any
   shrimp:any
+  lango:any
+  especial:any
   constructor(private platillos: PlatillosService) { }
 
   ngOnInit(): void {
@@ -51,6 +55,8 @@ export class MenuComponent implements OnInit {
     this.getOct();
     this.getFilete();
     this.getCamaron();
+    this.getLango();
+    this.getEspecial()
   }
 
     todos(){
@@ -68,6 +74,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     entrada(){
       this.todo=false;
@@ -84,6 +92,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
 
     sopa(){
@@ -101,6 +111,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
 
     marisco(){
@@ -118,6 +130,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
 
     pescados(){
@@ -135,6 +149,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
 
     carne(){
@@ -152,6 +168,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     tostadas(){
       this.todo=false;
@@ -168,6 +186,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     Tacos(){
       this.todo=false;
@@ -184,6 +204,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     Molca(){
       this.todo=false;
@@ -200,6 +222,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     Ensalada(){
       this.todo=false;
@@ -216,6 +240,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     Pulpo(){
       this.todo=false;
@@ -232,6 +258,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=true;
       this.camaron=false;
       this.filete=false
+      this.langosta=false
+      this.especialidad=false
     }
     Filetes(){
       this.todo=false;
@@ -248,6 +276,8 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=false;
       this.filete=true
+      this.langosta=false
+      this.especialidad=false
     }
     Shrimp(){
       this.todo=false;
@@ -264,8 +294,46 @@ export class MenuComponent implements OnInit {
       this.pulpo=false;
       this.camaron=true;
       this.filete=false;
+      this.langosta=false
+      this.especialidad=false
     }
 
+    Langosta(){
+      this.todo=false;
+      this.entradas=false;
+      this.sopas=false;
+      this.mariscos=false;
+      this.pescado=false;
+      this.carnes=false;
+      this.tostada=false;
+      this.taco=false;
+      this.molcajete=false;
+      this.ensalada=false;
+      this.machaca=false;
+      this.pulpo=false;
+      this.camaron=false;
+      this.filete=false;
+      this.langosta=true;
+      this.especialidad=false
+    }
+    Especial(){
+      this.todo=false;
+      this.entradas=false;
+      this.sopas=false;
+      this.mariscos=false;
+      this.pescado=false;
+      this.carnes=false;
+      this.tostada=false;
+      this.taco=false;
+      this.molcajete=false;
+      this.ensalada=false;
+      this.machaca=false;
+      this.pulpo=false;
+      this.camaron=false;
+      this.filete=false;
+      this.langosta=false;
+      this.especialidad=true;
+    }
 
     getPlatillo(){
       this.platillos.getPlatillos().subscribe(data =>{
@@ -427,6 +495,30 @@ getCamaron(){
   });
 }
 
+getLango(){
+  this.platillos.getLangosta().subscribe(data =>{
+    this.lango = [];
+    data.forEach((element:any) => {
+
+      this.lango.push({
+        id: element.payload.doc.id,
+        ...element.payload.doc.data()
+      })
+    });
+  });
+}
+getEspecial(){
+  this.platillos.getEspecial().subscribe(data =>{
+    this.especial = [];
+    data.forEach((element:any) => {
+
+      this.especial.push({
+        id: element.payload.doc.id,
+        ...element.payload.doc.data()
+      })
+    });
+  });
+}
 
 
 

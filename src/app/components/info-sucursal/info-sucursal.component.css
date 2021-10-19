@@ -99,7 +99,7 @@
   color: #000000;
 }
 .bgsec3{
-  width: 214px;
+  width: 200px;
   height: 150px;
   position: relative;
   background-repeat: no-repeat;
@@ -109,7 +109,7 @@
   margin-right: 15px;
 }
 .bgsec4{
-  width: 214px;
+  width: 200px;
   height: 150px;
   position: relative;
   background-repeat: no-repeat;
@@ -119,13 +119,21 @@
   margin-right: 15px;
 }
 .bgsec5{
-  width: 214px;
+  width: 200px;
   height: 150px;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
   background-image: url(src\assets\fb.png);
+  margin-right: 15px;
+}
+.bgsec6{
+  width: 200px;
+  height: 150px;
+  position: relative;
+  background: #ff8c00;
+  border-radius: 40px;
 }
 i{
 font-size: 28px;
@@ -370,6 +378,10 @@ select:focus{
   .bgsec5{
     width: 100%;
   }
+  .bgsec6{
+    width: 100%;
+    margin-bottom: 5%;
+  }
   .dis{
     display: none;
   }
@@ -382,5 +394,6 @@ select:focus{
   }
 .img-main2{
   height: 300px !important;
+  object-fit: cover;
 }
 }

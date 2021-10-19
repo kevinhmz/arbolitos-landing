@@ -53,12 +53,7 @@ export class HomeComponent implements OnInit {
 
 
 mapa(){
-console.log(this.sucursales)
-
-
 const loc = { lat: 23.634501, lng: -102.55278399999997}
-          console.log(loc)
-
          let   map = new google.maps.Map(document.getElementById("map")!, {
               center: loc,
               zoom: 4,
@@ -70,7 +65,6 @@ const loc = { lat: 23.634501, lng: -102.55278399999997}
                this.coor= this.sucursales[i].lat
                this.lng =[]
                this.lng=this.sucursales[i].lng
-               console.log(this.coor)
                const location ={lat: this.coor, lng: this.lng}
                const iconBase =
                "https://developers.google.com/maps/documentation/javascript/examples/full/images/";

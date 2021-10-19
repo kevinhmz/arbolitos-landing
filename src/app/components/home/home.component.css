@@ -14,6 +14,14 @@
   background-size: cover;
   background-position: center;
 }
+.bg1-3{
+  background-image: url(src\assets\LosArbolitos.png);
+  height: 1021px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 .img-2{
   position: relative;
   height: 100%;
@@ -235,13 +243,25 @@
 color: #FFFFFF;
 }
 .bgsec4{
-  background-image: url(src\assets\sec4Main.png);
+  background-image: url(src\assets\logoArb.png);
   width: 230px;
   height: 452.31px;
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 40px;
+}
+.center-p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Poppins;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    color: aliceblue;
+    text-shadow: 2px 2px #ff0000;
 }
 .custom-sec4> *{
   flex-basis: calc(100% / 3 - 16px);
@@ -325,6 +345,9 @@ width: 100%;
   }
 }
 @media (max-width: 550px) {
+  .bg1-3{
+    background-size: contain !important;
+  }
   .p9{
     padding-left: 1rem !important;
   }

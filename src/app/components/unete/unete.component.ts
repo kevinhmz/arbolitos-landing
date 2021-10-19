@@ -60,7 +60,7 @@ sendHire(user:any,last:any,email:any,tel:any,cp:any,years:any,perfil:any){
       empresa:this.empresa,
     }
 
-    let prueba =firebase.default.functions().httpsCallable("hire");
+    let prueba =firebase.functions().httpsCallable("hire");
       prueba({...data}).then(
   (res) => {
     console.log(res);

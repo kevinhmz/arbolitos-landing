@@ -48,7 +48,7 @@ sendContacto(user:any,last:any,email:any,asunto:any,comentario:any){
       comentario,
     }
 
-    let prueba =firebase.default.functions().httpsCallable("contacto");
+    let prueba =firebase.functions().httpsCallable("contacto");
       prueba({...data}).then(
   (res) => {
     console.log(res);

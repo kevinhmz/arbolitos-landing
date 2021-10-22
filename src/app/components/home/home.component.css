@@ -152,7 +152,7 @@
 .box-sec3{
   position: absolute;
   left: 3rem;
-  top: 15%;
+  top: 25%;
 }
 .p7{
   font-family: Poppins;
@@ -315,6 +315,9 @@ width: 100%;
     flex-direction: column;
     align-items: center;
   }
+  .dis{
+    height: 100% ;
+  }
 }
 @media (max-width: 800px) {
   .first-box .p2{
@@ -359,7 +362,7 @@ width: 100%;
 
   }
   .bg3{
-    background-image: url(src\assets\sec3Res.png);
+    background-image: url(src\assets\chef-min.jpg);
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;

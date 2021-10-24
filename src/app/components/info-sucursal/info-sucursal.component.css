@@ -127,6 +127,7 @@
   border-radius: 40px;
   background-image: url(src\assets\fb.png);
   margin-right: 15px;
+  margin-bottom: 5%;
 }
 .bgsec6{
   width: 200px;
@@ -229,6 +230,22 @@ color: white;
   color: #FFFFFF;
   justify-content: center;
   border: none;
+}
+.pos{
+  background: linear-gradient(180deg, #D31027 0%, #EA384F 100%);
+  border-radius: 100px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  padding: 0px 24px;
+  width: 221px;
+  height: 51px;
 }
 .form-column{
   display: flex;

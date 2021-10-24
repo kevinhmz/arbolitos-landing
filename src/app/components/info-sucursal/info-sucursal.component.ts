@@ -16,6 +16,7 @@ export class InfoSucursalComponent implements OnInit {
   razon: string = '';
   coor:any;
   lng:any;
+  current:any;
   constructor(private firestore: AngularFirestore,
     private aRoute: ActivatedRoute, private sucursal: SucursalesService,private router: Router) {
     this.uid = this.aRoute.snapshot.paramMap.get('id');
@@ -26,6 +27,7 @@ export class InfoSucursalComponent implements OnInit {
       window.scrollTo(0, 0);
     }
     this.getSucursal();
+    this.pos()
   }
 
   getSucursal(){
@@ -39,6 +41,15 @@ export class InfoSucursalComponent implements OnInit {
         })
 
       });
+      console.log(this.suc[0].lat)
+      navigator.geolocation.getCurrentPosition(
+        (position: GeolocationPosition) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          this.current=`https://www.google.com/maps/dir/?api=1&origin=${pos.lat},${pos.lng}&destination=${this.suc[0].lat},${this.suc[0].lng}&travelmode=driving`;
+        })
      this.mapa()
     });
 }
@@ -110,5 +121,19 @@ mapa(){
                    });
 
 
+    }
+
+    pos(){
+      navigator.geolocation.getCurrentPosition(
+        (position: GeolocationPosition) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          var l = `${pos}`
+          console.log(pos.lat);
+          console.log(pos.lng)
+        })
     }
 }

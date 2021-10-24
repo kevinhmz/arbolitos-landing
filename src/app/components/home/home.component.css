@@ -109,13 +109,14 @@
   color: #FFFFFF;
 }
 .bg2{
-  background-image: url(src\assets\img-first.png);
+  background-image: url(src\assets\trabajadores.jpg);
   width: 100%;
   height: 100%;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
+  background-position: center;
 }
 .box-main p{
   color:  white;

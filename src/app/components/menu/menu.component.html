@@ -492,7 +492,7 @@
               <p class="p4">{{langosta.descripcion}}</p>
             </div>
           </div>
-          <div class="bgsec2"   *ngFor="let langosta of shrimp;"style="background-image: url({{langosta.res}});" [routerLink]="['/Platillo',langosta.id]">
+          <div class="bgsec2"   *ngFor="let langosta of lango;"style="background-image: url({{langosta.res}});" [routerLink]="['/Platillo',langosta.id]">
             <img src="../assets/resSucBack.png" alt="" style="position: absolute;
             width: 100%;
             height: 100%;">
@@ -525,7 +525,7 @@
               <p class="p4">{{especialidad.descripcion}}</p>
             </div>
           </div>
-          <div class="bgsec2"   *ngFor="let especialidad of shrimp;"style="background-image: url({{especialidad.res}});" [routerLink]="['/Platillo',especialidad.id]">
+          <div class="bgsec2"   *ngFor="let especialidad of especial;"style="background-image: url({{especialidad.res}});" [routerLink]="['/Platillo',especialidad.id]">
             <img src="../assets/resSucBack.png" alt="" style="position: absolute;
             width: 100%;
             height: 100%;">

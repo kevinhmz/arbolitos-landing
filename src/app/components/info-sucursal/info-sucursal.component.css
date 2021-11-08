@@ -105,7 +105,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
-  background-image: url(src\assets\sucMain.png);
+  background-image: url('/assets/sucMain.png');
   margin-right: 15px;
 }
 .bgsec4{
@@ -115,7 +115,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
-  background-image: url(src\assets\3color.png);
+  background-image: url('/assets/3color.png');
   margin-right: 15px;
 }
 .bgsec5{
@@ -125,7 +125,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 40px;
-  background-image: url(src\assets\fb.png);
+  background-image: url('/assets/fb.png');
   margin-right: 15px;
   margin-bottom: 5%;
 }
